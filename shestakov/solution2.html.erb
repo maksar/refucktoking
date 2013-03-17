@@ -1,0 +1,12 @@
+<div class="comment-content">
+  <div class="quotecontent">
+    <% if comment.author -%>
+      <div class="quotestart">
+        <div class="quotename">
+          Цитата &mdash; <%= comment.author %> 
+        </div>
+      </div>
+    <% end -%>
+    <%= simple_format comment.body %>
+  </div>
+</div>
