@@ -1,21 +1,22 @@
+#coding: utf-8
 require_relative '../erb_compiler'
 
 module Solution1
-	module CommentHelper
+	module CommentsHelper
 		PARSER = %r{
-			\[ quote \s* =? \s* (?<author>\w+)? \s* \]
+			\[ \s* quote \s* =? \s* (?<author>\w+)? \s* \]
 			\s* (?<citation>.+?) \s*
-			\[ /quote \]
+			\[ \s* / \s* quote \s* \]
 		}xm
 
 		def format_comment comment
-			comment.gsub(PARSER) { "<div class='quotecontent'>#{$~[:author] ? "<div class='quotestart'><div class='quotename'>Citata &mdash; #{$~[:author]}</div>" : ""}#{$~[:citation]}</div>" }
+			comment.gsub(PARSER) { "<div class='quotecontent'>#{$~[:author] ? "<div class='quotestart'><div class='quotename'>Цитата &mdash; #{$~[:author]}</div>" : ""}#{$~[:citation]}</div>" }
 		end
 	end
 
 	def self.solve comment
-		compiler = ErbCompiler.new(File.read 'shestakov/solution1.html.erb')
-		compiler.extend CommentHelper
+		compiler = ErbCompiler.new(File.read File.join(File.dirname(__FILE__), 'solution1.html.erb'))
+		compiler.extend CommentsHelper
 
 		compiler.compile comment
 	end

@@ -8,4 +8,6 @@ group :test do
   gem 'minitest'
   gem 'minitest-ci'
   gem 'simplecov'
+  gem 'cucumber'
+  gem 'pry'
 end
