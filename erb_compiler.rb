@@ -7,11 +7,8 @@ class ErbCompiler
 
 	attr_reader :comment, :output
 
-  attr_accessor :output_buffer
-
 	def initialize contents
 		@erb = ERB.new contents, nil, '%<>-', '@output'
-    @output_buffer = ActionView::OutputBuffer.new
 	end
 
 	def compile comment
