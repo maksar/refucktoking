@@ -1,6 +1,6 @@
 require_relative '../erb_compiler'
 
-module Solution2
+module ShestakovSolution2
   module CommentsHelper
     PARSER = %r{
       \[ \s* quote \s* =? \s* (?<author>\w+)? \s* \]

@@ -4,6 +4,7 @@ require 'action_view'
 class ErbCompiler
 	include ActionView::Helpers::OutputSafetyHelper
 	include ActionView::Helpers::TextHelper
+  include ERB::Util
 
 	attr_reader :comment, :output
 

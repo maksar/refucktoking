@@ -1,7 +1,7 @@
 #coding: utf-8
 require_relative '../erb_compiler'
 
-module Solution1
+module ShestakovSolution1
 	module CommentsHelper
 		PARSER = %r{
 			\[ \s* quote \s* =? \s* (?<author>\w+)? \s* \]

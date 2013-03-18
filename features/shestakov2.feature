@@ -1,7 +1,7 @@
 Feature: Solution2 check
 
   Background:
-    Given using "Solution2"
+    Given using "ShestakovSolution2"
 
   Scenario: simple quote
     Given quote
